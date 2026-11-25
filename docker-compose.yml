@@ -1,0 +1,8 @@
+services:
+  nat-drill:
+    build: .
+    container_name: nat-drill
+    ports:
+      - "8000:8000"
+    # 公网端口池在容器 loopback 上按需绑定, 无需映射到宿主
+    restart: unless-stopped
